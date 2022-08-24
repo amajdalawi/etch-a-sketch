@@ -1,6 +1,15 @@
 .squares_container {
     border:solid 5px red;
-    width: 900px;
-    height: 900px;
+    width: 500px;
+    height: 500px;
     display: flex;
+    flex-wrap: wrap;
+    /* box-sizing: border-box; */
+}
+
+div.squares_container div {
+    /* flex: uato; */
+    border: solid 1px black;
+    box-sizing: border-box;
+
 }
