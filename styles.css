@@ -13,3 +13,19 @@ div.squares_container div {
     box-sizing: border-box;
 
 }
+
+div.squares_container div:hover {
+    background-color: rgb(180, 178, 178);
+}
+
+.but {
+    font-size: 20px;
+    background-color: rgb(74, 138, 194);
+    color:rgb(244, 221, 122);
+    padding: 5px;
+    border-radius: 2px;
+}
+
+.make_black {
+    background-color: black;
+}
