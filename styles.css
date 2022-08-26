@@ -23,9 +23,21 @@ body {
 div.squares_container div {
     
     /* border: solid 1px rgb(209, 207, 207); */
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+
     box-sizing: border-box;
-    aspect-ratio: auto 1/1;
-    flex: 1 0 auto;
+    aspect-ratio: 1/1;
+    /* width: 100%; */
+    /* min-height: 0px;
+    min-width: 0px; */
+    /* height:100%; */
+    /* overflow:auto; */
+    /* width: 30vw;
+    height: 30vw; */
+    flex:1;
+    /* flex: 1 1 100%; */
     
 
 }

@@ -10,12 +10,12 @@ function ClearCanvas(color=default_color, n=50) {
     for (let i = 0; i < n*n; i++) {
         // Create a singular div element
         let div = document.createElement('div');
-        // heightDiv = 500/n;
-        // widthDiv = 500/n;
+        heightDiv = 500/n;
+        widthDiv = 500/n;
 
         //Apply the appropriate dimensions to it
-        // div.style.height = heightDiv.toString() + 'px'
-        // div.style.width = widthDiv.toString() + 'px'
+        div.style.height = heightDiv.toString() + 'px'
+        div.style.width = widthDiv.toString() + 'px'
         div.classList.add('divy');
         squaresContainer.appendChild(div);
         // div.addEventListener('mouseenter',() => {
@@ -40,14 +40,15 @@ function ClearCanvas(color=default_color, n=50) {
                     console.log(y)
                     let finalRgbList = new Array();
                     for (const x of y) {
-                        if (typeof +x ==="number" && +x > 0) {
+                        if (x !== "" && typeof +x ==="number") {
                             // console.log(x, typeof x);
-                            if (+x == 0) {
+                            if (+x === 0) {
+                                finalRgbList.push(+x);
                                 continue;
+                            } else if (+x > 0)  {
+                                let newColor = +x - Math.ceil((+x)*0.1);
+                                finalRgbList.push(newColor);
                             }
-                            let newColor = +x - Math.ceil((+x)*0.1);
-                            finalRgbList.push(newColor);
-
                         }
                     }
                     console.log(finalRgbList)
