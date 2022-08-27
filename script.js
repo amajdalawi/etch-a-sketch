@@ -5,17 +5,22 @@ let default_color = 'black';
 function ClearCanvas(color=default_color, n=50) {
     // console.log(document.querySelectorAll('div.squares_container div').length)
     if (document.querySelectorAll('div.squares_container div').length> 0) {
-        document.querySelectorAll('div.squares_container div').forEach((someDiv) => squaresContainer.removeChild(someDiv));
+        squaresContainer.innerHTML = '';
     }
+
+    squaresContainer.style.gridTemplateColumns = `repeat(${n}, 1fr)`
+    squaresContainer.style.gridTemplateRows = `repeat(${n}, 1fr)`
+
     for (let i = 0; i < n*n; i++) {
+
         // Create a singular div element
         let div = document.createElement('div');
-        heightDiv = 500/n;
-        widthDiv = 500/n;
+        // heightDiv = 500/n;
+        // widthDiv = 500/n;
 
         //Apply the appropriate dimensions to it
-        div.style.height = heightDiv.toString() + 'px'
-        div.style.width = widthDiv.toString() + 'px'
+        // div.style.height = heightDiv.toString() + 'px'
+        // div.style.width = widthDiv.toString() + 'px'
         div.classList.add('divy');
         squaresContainer.appendChild(div);
         // div.addEventListener('mouseenter',() => {

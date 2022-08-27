@@ -15,8 +15,8 @@ body {
     border-radius: 3px;
     width: 500px;
     height: 500px;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    /* flex-wrap: wrap; */
     /* box-sizing: border-box; */
 }
 
