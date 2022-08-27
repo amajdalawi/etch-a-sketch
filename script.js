@@ -3,7 +3,6 @@ squaresContainer = document.querySelector(".squares_container")
 let default_color = 'black';
 
 function ClearCanvas(color=default_color, n=50) {
-    // console.log(document.querySelectorAll('div.squares_container div').length)
     if (document.querySelectorAll('div.squares_container div').length> 0) {
         squaresContainer.innerHTML = '';
     }
@@ -15,25 +14,9 @@ function ClearCanvas(color=default_color, n=50) {
 
         // Create a singular div element
         let div = document.createElement('div');
-        // heightDiv = 500/n;
-        // widthDiv = 500/n;
-
-        //Apply the appropriate dimensions to it
-        // div.style.height = heightDiv.toString() + 'px'
-        // div.style.width = widthDiv.toString() + 'px'
         div.classList.add('divy');
         squaresContainer.appendChild(div);
-        // div.addEventListener('mouseenter',() => {
-        //     div.classList.remove('divy');
-        //     if (color == 'random') {
-        //         div.style.backgroundColor = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)})`;
-        //     } else {
-        //     div.style.backgroundColor = color;
-        //     }
-        //     // console.log(div.style.backgroundColor, color, default_color)
-        //     // div.classList.remove('div:hover')
-        // })
-
+        
 
         div.onmouseenter= () => {
             div.classList.remove('divy');
@@ -46,7 +29,6 @@ function ClearCanvas(color=default_color, n=50) {
                     let finalRgbList = new Array();
                     for (const x of y) {
                         if (x !== "" && typeof +x ==="number") {
-                            // console.log(x, typeof x);
                             if (+x === 0) {
                                 finalRgbList.push(+x);
                                 continue;
@@ -62,8 +44,6 @@ function ClearCanvas(color=default_color, n=50) {
             } else {
             div.style.backgroundColor = color;
             }
-            // console.log(div.style.backgroundColor, color, default_color)
-            // div.classList.remove('div:hover')
         }
 
     }
@@ -78,11 +58,6 @@ newcan.addEventListener('click',() => {
     ClearCanvas(default_color,+slider.value);
 })
 
-// slider.oninput = () => {
-//     console.log(slider.value)
-//     ClearCanvas(default_color,+slider.value)
-// };
-
 
 but = document.querySelector('.but');
 but.addEventListener('click',() => ClearCanvas(default_color,+slider.value));
@@ -96,52 +71,8 @@ makeBlack.addEventListener('click',() => {
 makeRainbow = document.querySelector('.rainbow');
 makeRainbow.addEventListener('click', () => {
     default_color = 'random'
-    // console.log(default_color)
     ClearCanvas(default_color,+slider.value);
 })
 
 ClearCanvas(default_color,+slider.value);
 
-
-
-
-
-
-
-
-
-
-
-
-// let insertSquares = function(n) {
-//     for (let i = 0; i < n*n; i++) {
-//         let div = document.createElement('div');
-//         let height = squaresContainer.style.height;
-//         let width = squaresContainer.style.width;
-//         console.log(height);
-
-//         heightDiv = 500/n;
-//         console.log(heightDiv);
-//         widthDiv = 500/n;
-//         div.style.height = heightDiv.toString() + 'px';
-//         div.style.width = widthDiv.toString() + 'px';
-
-//         div.classList.add('default_white')
-//         squaresContainer.appendChild(div);
-//         div.addEventListener('mouseenter',() => {div.classList.add('make_black')});
-
-//         }
-// };
-
-
-
-// let clearSquares = function() {
-//     divList = document.querySelectorAll('div.squares_container div');
-//     for (const div of divList) {
-//         div.classList.remove('make_black');
-//     }
-// };
-
-
-
-// RANDOM 
